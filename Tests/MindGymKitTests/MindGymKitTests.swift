@@ -1,5 +1,5 @@
 import XCTest
-@testable import MindGymKit_
+@testable import MindGymKit
 
 final class MindGymKitTests: XCTestCase {
     func testExample() throws {

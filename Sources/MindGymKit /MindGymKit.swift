@@ -3,9 +3,9 @@
 
 import UIKit
 
-public struct MindGymKit {
+open class MindGymKit {
     var helloMind: String = "마음가짐"
-    public var publicHelloMind: String = "안녕 마음가짐"
+    open var publicHelloMind: String = "안녕 마음가짐"
     
     public init(helloMind: String) {
         publicHelloMind = helloMind
