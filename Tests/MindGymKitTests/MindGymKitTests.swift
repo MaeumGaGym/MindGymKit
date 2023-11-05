@@ -1,7 +1,7 @@
 import XCTest
 @testable import MindGymKit_
 
-final class MindGymKit_Tests: XCTestCase {
+final class MindGymKitTests: XCTestCase {
     func testExample() throws {
         // XCTest Documentation
         // https://developer.apple.com/documentation/xctest
