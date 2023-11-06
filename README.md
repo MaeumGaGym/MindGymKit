@@ -55,3 +55,21 @@ https://github.com/MaeumGajim/MindGymKit.git
     ```
 
 `⚠️ Don't forget to fill in the value ⚠️`
+
+### MindGymKit
+
+- **Get today's number of steps**:
+
+    ```swift
+    let mindGym = MindGymKit()
+    
+    mindGym.fetchTodayStepCount { stepCount in
+         DispatchQueue.main.async {
+             if let stepCount = stepCount {
+                    print("todayStep: \(stepCount)")
+                } else {
+                    print("Error")
+                }
+            }
+      }
+    ```
