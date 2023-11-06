@@ -36,3 +36,20 @@ To integrate using Apple's Swift package manager, add the following as a depende
 ```swift
 https://github.com/MaeumGajim/MindGymKit.git
 ```
+
+## Usage
+### Info.plist 📄
+
+- **How to allow camera access**:
+
+    ```swift
+    // Message explaining why the app requested permission to read samples from the HealthKit store.
+    Privacy - Health Share Usage Description ⚓️
+    ```
+    
+- **How to allow album access**:
+
+    ```swift
+    // Message explaining why the app requested permission to save samples to the HealthKit store.
+    Privacy - Health Update Usage Description 🦾
+    ```
