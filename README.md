@@ -53,3 +53,5 @@ https://github.com/MaeumGajim/MindGymKit.git
     // Message explaining why the app requested permission to save samples to the HealthKit store.
     Privacy - Health Update Usage Description 🦾
     ```
+
+`⚠️ Don't forget to fill in the value ⚠️`
