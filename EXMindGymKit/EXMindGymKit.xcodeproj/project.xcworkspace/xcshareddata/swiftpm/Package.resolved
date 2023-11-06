@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "mindgymkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/MaeumGajim/MindGymKit",
+      "state" : {
+        "branch" : "main",
+        "revision" : "dc002327fb8eac4496feac6713124de8ab29e622"
+      }
+    }
+  ],
+  "version" : 2
+}
