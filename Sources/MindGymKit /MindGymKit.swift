@@ -1,5 +1,6 @@
 import UIKit
 import HealthKit
+import RxSwift
 
 public class MindGymKit {
     public init() {}
