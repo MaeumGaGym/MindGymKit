@@ -3,7 +3,7 @@
 
 # MindGymKit
 <aside>
-💪🏿 v0.1.6
+💪🏿 v0.1.7
 </aside>
 <br>
 <br>
