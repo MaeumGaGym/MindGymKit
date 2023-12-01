@@ -3,7 +3,7 @@
 
 # MindGymKit
 <aside>
-💪🏿 v0.1.7
+💪🏿 v0.1.8
 </aside>
 <br>
 <br>
@@ -72,4 +72,14 @@ https://github.com/MaeumGajim/MindGymKit.git
                 }
             }
       }
+    ```
+- **Using a stopwatch**:
+    ```swift
+    let stopWatchObject = MindGymStopWatchKit()
+       
+    // functions
+    stopWatchObject.startTimer(label: stopWatchLabel)
+    stopWatchObject.stopTimer()
+    stopWatchObject.recordTime()
+    stopWatchObject.resetTimer(label: stopWatchLabel)
     ```
