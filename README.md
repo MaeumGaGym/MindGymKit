@@ -75,11 +75,22 @@ https://github.com/MaeumGajim/MindGymKit.git
     ```
 - **Using a stopwatch**:
     ```swift
-    let stopWatchObject = MindGymStopWatchKit()
-       
-    // functions
-    stopWatchObject.startTimer(label: stopWatchLabel)
-    stopWatchObject.stopTimer()
-    stopWatchObject.recordTime()
-    stopWatchObject.resetTimer(label: stopWatchLabel)
+    
+    let stopwatch = MindGymStopWatchKit()
+    
+    stopwatch.mainStopwatch.timeUpdate
+        .observe(on: MainScheduler.instance)
+        .subscribe(onNext: { [weak self] timeString in
+            self?.stopWatchLabel.text = timeString
+        })
+        .disposed(by: disposeBag)
+        
+    stopwatch.mainStopwatch.recordUpdate
+        .observe(on: MainScheduler.instance)
+        .subscribe(onNext: { [weak self] lapTimes in
+            self?.lapRecords = lapTimes
+            self?.lapRecords.append(lapTimes.last ?? "")
+            print("Lap record : \(String(describing: self?.lapRecords ?? nil))")
+        })
+        .disposed(by: disposeBag)
     ```
