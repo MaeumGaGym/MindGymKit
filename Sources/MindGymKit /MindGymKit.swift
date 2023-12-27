@@ -140,7 +140,6 @@ public class MindGaGymKitTimer: NSObject {
     func stop() {
         timer?.invalidate()
         timer = nil
-        
     }
 
     func restart() {
@@ -157,6 +156,10 @@ public class MindGaGymKitTimer: NSObject {
     }
     
     private func timeString(from counter: Double) -> String {
+
+        if counter == 0 {
+            stop()
+        }
         
         let hours: String = String(format: "%02d", Int(counter / 3600))
         let minutes: String = String(format: "%02d", Int(counter / 60))
@@ -196,4 +199,3 @@ public class MindGymTimerKit {
     }
 
 }
-
