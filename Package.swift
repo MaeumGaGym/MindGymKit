@@ -6,23 +6,24 @@ import PackageDescription
 let package = Package(
     name: "MindGymKit",
     platforms: [
-        .iOS(.v13)
+        .iOS(.v15)
     ],
     products: [
-        .library(name: "MindGym", targets: ["MindGym"])
+        .library(name: "MindGymKit", targets: ["MindGymKit"])
     ],
     dependencies: [
         .package(url: "https://github.com/ReactiveX/RxSwift", from: "6.5.0"),
     ],
     targets: [
         .target(
-            name: "MindGym",
+            name: "MindGymKit",
             dependencies: [
                 "RxSwift"
-            ]
+            ],
+            path: "MindGymKit"
         ),
         .testTarget(
             name: "MindGymKitTests",
-            dependencies: ["MindGym"]),
+            dependencies: ["MindGymKit"]),
     ]
 )
