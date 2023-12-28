@@ -1,10 +1,3 @@
-//
-//  File.swift
-//  
-//
-//  Created by 박준하 on 12/28/23.
-//
-
 import UIKit
 import RxSwift
 
