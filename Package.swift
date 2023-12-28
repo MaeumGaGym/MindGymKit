@@ -9,20 +9,20 @@ let package = Package(
         .iOS(.v13)
     ],
     products: [
-        .library(name: "MindGymKit", targets: ["MindGymKit"])
+        .library(name: "MindGym", targets: ["MindGym"])
     ],
     dependencies: [
         .package(url: "https://github.com/ReactiveX/RxSwift", from: "6.5.0"),
     ],
     targets: [
         .target(
-            name: "MindGymKit",
+            name: "MindGym",
             dependencies: [
                 "RxSwift"
             ]
         ),
         .testTarget(
             name: "MindGymKitTests",
-            dependencies: ["MindGymKit"]),
+            dependencies: ["MindGym"]),
     ]
 )
