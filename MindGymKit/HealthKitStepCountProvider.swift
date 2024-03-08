@@ -5,6 +5,7 @@ import RxSwift
 // MARK: - MindGymKit
 public protocol StepCountProvider {
     func fetchTodayStepCount(completion: @escaping (Double?) -> Void)
+    func observeStepCountUpdates(completion: @escaping (Double?) -> Void)
 }
 
 open class HealthKitStepCountProvider: StepCountProvider {
@@ -43,6 +44,25 @@ open class HealthKitStepCountProvider: StepCountProvider {
                 if let error = error {
                     print("Error requesting HealthKit authorization: \(error.localizedDescription)")
                 }
+            }
+        }
+    }
+
+    public func observeStepCountUpdates(completion: @escaping (Double?) -> Void) {
+        let stepType = HKObjectType.quantityType(forIdentifier: .stepCount)!
+        let query = HKObserverQuery(sampleType: stepType, predicate: nil) { query, completionHandler, error in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+            } else {
+                self.fetchTodayStepCount(completion: completion)
+            }
+            completionHandler()
+        }
+
+        healthStore.execute(query)
+        healthStore.enableBackgroundDelivery(for: stepType, frequency: .immediate) { success, error in
+            if let error = error {
+                print("Failed to enable background delivery: \(error.localizedDescription)")
             }
         }
     }
